@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            height: 100vh;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        div {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="int"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[type="text"]:focus,
+        input[type="int"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .radio-container {
+            display: flex;
+            align-items: center;
+        }
+        .radio-container label {
+            flex: 1;
+            margin-left: 30px;
+        }
+        .radio-container input[type="radio"] {
+            margin-left: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li {
+            margin: 5px 0;
+        }
+        .radio-container input[type="radio"] {
+            margin-top: -4px;
+            transform: translateX(-230px); 
+            margin-left: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Registration Form</h1>
+    </header>
+    <form method="post" action="https://script.google.com/macros/s/AKfycbyHw6hITyHRGbY1SeR7VZHTnlpHW7Y_CmHDYqt7j5Yzky5AwncOZZtwPEK3wI3CRtCYZw/exec">
+        <div>
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" placeholder="name" required>
+        </div>
+
+        <div>
+            <label for="Number">Registration Number</label>
+            <input id="Number" type="text" name="Number" placeholder="registration no." required>
+        </div>
+
+        <div>
+            <label for="section">Section</label>
+            <ul>
+                <li class="radio-container">
+                    <label for="sectionA">Section A</label>
+                    <input type="radio" id="sectionA" name="section" value="A" required>
+                </li>
+                <li class="radio-container">
+                    <label for="sectionB">Section B</label>
+                    <input type="radio" id="sectionB" name="section" value="B" required>
+                </li>
+            </ul>
+        </div>
+        
+
+        <div>
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="email">Email Id</label>
+            <input id="email" type="email" name="email" placeholder="email Id">
+        </div>
+
+        <div>
+            <label for="Phone No.">Phone No.</label>
+            <input id="phone" type="tel" name="phone" placeholder="Ph No.">
+        </div>
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
