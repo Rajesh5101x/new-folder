@@ -13,7 +13,7 @@ int reco(int wt[], int value[], int n, int w){
         return reco(wt, value, n - 1, w);
     }
 
-    max(reco(wt, value, n-1, w - wt[n - 1]) + value[n - 1], reco(wt, value, n - 1, w));
+    return max(reco(wt, value, n-1, w - wt[n - 1]) + value[n - 1], reco(wt, value, n - 1, w));
 }
 
 void main(){
