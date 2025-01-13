@@ -13,9 +13,9 @@
             "cStandard": "c11",
             "cppStandard": "gnu++14",
             "intelliSenseMode": "windows-gcc-x86",
-            "compilerPath": "",
+            "compilerPath": "\"C:\\msys64\\mingw64\\bin\\g++.exe\"",
             "compilerArgs": [
-                "D:\\Downloads\\mingw32\\bin"
+                "C:\\msys64\\mingw64\\bin"
             ]
         },
         {

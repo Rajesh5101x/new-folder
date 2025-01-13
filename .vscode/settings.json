@@ -2,8 +2,13 @@
     "editor.tabSize": 4,
     "files.associations": {
         "*.cpp": "cpp",
-        "*.h": "cpp"
+        "*.h": "cpp",
+        "array": "c",
+        "string": "c",
+        "string_view": "c",
+        "span": "c"
     },
     "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+    "C_Cpp.errorSquiggles": "disabled",
     // Add other settings here
 }

@@ -1,0 +1,58 @@
+#include<iostream>
+#include<stack>
+#include<string>
+using namespace std;
+
+int precidency(char s){
+    if(s == '^'){
+        return 3;
+    }
+
+    if(s == '*' || s == '/'){
+        return 2;
+    }
+
+    if(s == '+' || s == '-'){
+        return 1;
+    }
+    return -1;
+}
+
+string converter(string s){
+    stack<char> st;
+    string rec;
+    for(int i = 0; i < s.length(); i++){
+        if((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')){
+            rec += s[i];
+        }else if(isdigit(s[i])){
+            rec += s[i];
+        }else if(s[i] == '('){
+            st.push(s[i]);
+        }else if(s[i] == ')'){
+            while(!st.empty() && st.top() != '('){
+                rec += st.top();
+                st.pop();
+            }
+            if(!st.empty() && st.top() == '('){
+                st.pop();
+            }
+        }else{ 
+            while(!st.empty() && precidency(st.top()) > precidency(s[i])){
+                rec += st.top();
+                st.pop();
+            }
+            st.push(s[i]);
+        }
+    }
+    while(!st.empty()){
+        rec += st.top();
+        st.pop();
+    }
+    return rec;
+}
+
+int main(){
+    string s = "(1-2/3)*(1/2-3)";
+    //string s = "(a-b/c)*(a/k-l)";
+    cout<<converter(s);
+}
