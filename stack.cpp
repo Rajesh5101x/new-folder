@@ -39,6 +39,14 @@ class stack{
         bool empty(){
             return top == -1;
         }
+
+        void displayFront(){
+            if(top == -1){
+                cout<<"stack is empty\n";
+                return;
+            }
+            cout<<*(arr + 0)<<endl;
+        }
 };
 
 int main(){
@@ -54,6 +62,7 @@ int main(){
     st.Top();
     st.pop();
     st.Top();
+    st.displayFront();
 
     return 0;
 }
