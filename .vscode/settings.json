@@ -9,7 +9,8 @@
         "span": "c",
         "deque": "c",
         "vector": "c",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp"
     },
     "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
     "C_Cpp.errorSquiggles": "disabled",
