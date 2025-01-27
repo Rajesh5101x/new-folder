@@ -62,13 +62,13 @@ string converter(string s) {
     string rec;
 
     for (int i = 0; i < s.length(); i++) {
-        if (isalpha(s[i]) || isdigit(s[i])) {
+        if((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')){
             rec += s[i];
-        }
-        else if (s[i] == '(') {
+        }else if(isdigit(s[i])){
+            rec += s[i];
+        }else if (s[i] == '(') {
             st.push(s[i]);
-        }
-        else if (s[i] == ')') {
+        }else if (s[i] == ')') {
             while (!st.empty() && st.Top() != '(') {
                 rec += st.Top();
                 st.pop();
@@ -76,8 +76,7 @@ string converter(string s) {
             if (!st.empty() && st.Top() == '(') {
                 st.pop(); 
             }
-        }
-        else {
+        }else {
             while (!st.empty() && priority(st.Top()) >= priority(s[i])) {
                 rec += st.Top();
                 st.pop();
