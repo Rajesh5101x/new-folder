@@ -1,64 +1,26 @@
 #include<iostream>
+#include<stack>
 #include<string>
-#define n 100
+#include <algorithm> 
 using namespace std;
 
-class stack{
-    char *arr;
-    int Top;
-
-    public : 
-        stack(){
-            arr = new char[n];
-            Top = -1;
-        }
-
-        void push(char val){
-            if(Top == n-1){
-                cout<<"Stack is full";
-                return;
-            }
-            arr[++Top] = val;
-        }
-
-        char top(){
-            if(Top == -1){
-                return '\0';
-            }
-            return arr[Top];
-        }
-
-        bool empty(){
-            return Top == -1;
-        }
-
-        void pop(){
-            if(Top == -1){
-                cout<<"Stack is empty";
-                return;
-            }
-            Top--;
-        }
-};
-
-int priority(char c){
-    if(c == '^'){
+int precidency(char s){
+    if(s == '^'){
         return 3;
     }
 
-    if(c == '*' || c == '/'){
+    if(s == '*' || s == '/'){
         return 2;
     }
 
-    if(c == '+' || c == '-'){
+    if(s == '+' || s == '-'){
         return 1;
     }
-
     return -1;
 }
 
 string converter(string s){
-    stack st;
+    stack<char> st;
     string rec;
     for(int i = (s.length()-1); i >= 0; i--){
         if((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')){
@@ -75,8 +37,8 @@ string converter(string s){
             if(!st.empty() && st.top() == ')'){
                 st.pop();
             }
-        }else{
-            while(!st.empty() && priority(st.top()) > priority(s[i])){
+        }else{ 
+            while(!st.empty() && precidency(st.top()) >= precidency(s[i])){
                 rec += st.top();
                 st.pop();
             }
@@ -87,6 +49,7 @@ string converter(string s){
         rec += st.top();
         st.pop();
     }
+    reverse(rec.begin(),rec.end());
     return rec;
 }
 
